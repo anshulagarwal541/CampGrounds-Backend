@@ -1,0 +1,36 @@
+<%- layout("layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="text-left">
+                        <h1>Sign Up</h1>
+                    </div>
+                    <form action="/signup" method="POST" novalidate class="validateForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">username:</label>
+                            <input type="text" id="username" required class="form-control" autofocus name="username">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" id="email" required class="form-control" name="email">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" id="password" required class="form-control" name="password">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <button class="btn btn-success mb-3">SignUp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
