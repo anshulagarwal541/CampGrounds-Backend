@@ -19,10 +19,9 @@ const passport = require('passport');
 const localStrategy = require('passport-local');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 const MongoDBStore = require('connect-mongo')(session);
-//'mongodb://127.0.0.1:27017/yelpcampground'
-mongoose.connect('mongodb://127.0.0.1:27017/yelpcampground', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("Connected to mongoDB..");
     })
