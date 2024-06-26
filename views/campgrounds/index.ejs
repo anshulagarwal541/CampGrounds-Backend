@@ -6,9 +6,12 @@
         <% for( let campground of campgrounds) { %>
             <div class="card mb-4">
                 <div class="row">
-                    <div class="col-md-4">
-                        <img crossorigin="anonymous" class="img-fluid" src="<%= campground.images[0].url %>" alt="">
-                    </div>
+                <% if (campground.images && campground.images.length > 0) { %>
+                      <img crossorigin="anonymous" class="img-fluid" src="<%= campground.images[0].url %>" alt="">
+                    <% } else { %>
+                      <img crossorigin="anonymous" class="img-fluid" src="https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg?w=1060&t=st=1719419624~exp=1719420224~hmac=b4c457c6156753730be6a22f6ffcffeaed23a6420433517ce8e2dfb7d5f75ec9" alt="Default Image">
+                    <% } %>
+                    
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">
